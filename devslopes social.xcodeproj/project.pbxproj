@@ -14,6 +14,11 @@
 		8436FDF61E98B04B005F3058 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8436FDF51E98B04B005F3058 /* Assets.xcassets */; };
 		8436FDF91E98B04B005F3058 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8436FDF71E98B04B005F3058 /* LaunchScreen.storyboard */; };
 		84721D481E98B1100075BC5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84721D471E98B1100075BC5C /* GoogleService-Info.plist */; };
+		84DF22C51E99174D0027571A /* fancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF22C41E99174D0027571A /* fancyView.swift */; };
+		84DF22C71E991D770027571A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF22C61E991D770027571A /* Constants.swift */; };
+		84DF22CA1E991F690027571A /* RoundBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF22C91E991F690027571A /* RoundBtn.swift */; };
+		84DF22CC1E9922130027571A /* FancyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF22CB1E9922130027571A /* FancyTextField.swift */; };
+		84DF22CE1E9925CF0027571A /* fancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF22CD1E9925CF0027571A /* fancyButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +32,11 @@
 		8436FDF81E98B04B005F3058 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8436FDFA1E98B04B005F3058 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84721D471E98B1100075BC5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84DF22C41E99174D0027571A /* fancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fancyView.swift; sourceTree = "<group>"; };
+		84DF22C61E991D770027571A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		84DF22C91E991F690027571A /* RoundBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundBtn.swift; sourceTree = "<group>"; };
+		84DF22CB1E9922130027571A /* FancyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyTextField.swift; sourceTree = "<group>"; };
+		84DF22CD1E9925CF0027571A /* fancyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fancyButton.swift; sourceTree = "<group>"; };
 		A6C7881A3A822786CC12AC8F /* Pods_devslopes_social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_devslopes_social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +81,7 @@
 		8436FDED1E98B04B005F3058 /* devslopes social */ = {
 			isa = PBXGroup;
 			children = (
+				84DF22C81E991F220027571A /* Util */,
 				84721D4B1E98B62C0075BC5C /* View */,
 				84721D4A1E98B6220075BC5C /* Controller */,
 				84721D491E98B61A0075BC5C /* Model */,
@@ -104,9 +115,21 @@
 		84721D4B1E98B62C0075BC5C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84DF22C41E99174D0027571A /* fancyView.swift */,
+				84DF22C91E991F690027571A /* RoundBtn.swift */,
+				84DF22CB1E9922130027571A /* FancyTextField.swift */,
+				84DF22CD1E9925CF0027571A /* fancyButton.swift */,
 			);
 			name = View;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		84DF22C81E991F220027571A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				84DF22C61E991D770027571A /* Constants.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		ED570BEA03F9B4809699583C /* Pods */ = {
@@ -242,8 +265,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DF22C51E99174D0027571A /* fancyView.swift in Sources */,
+				84DF22CA1E991F690027571A /* RoundBtn.swift in Sources */,
 				8436FDF11E98B04B005F3058 /* SignInVC.swift in Sources */,
+				84DF22CC1E9922130027571A /* FancyTextField.swift in Sources */,
 				8436FDEF1E98B04B005F3058 /* AppDelegate.swift in Sources */,
+				84DF22CE1E9925CF0027571A /* fancyButton.swift in Sources */,
+				84DF22C71E991D770027571A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

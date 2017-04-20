@@ -23,6 +23,7 @@
 		84F626701EA8F7A1006906E3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F6266C1EA8F7A1006906E3 /* FBSDKLoginKit.framework */; };
 		84F626711EA8F7A1006906E3 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F6266D1EA8F7A1006906E3 /* FBSDKShareKit.framework */; };
 		84F626731EA8FF48006906E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84F626721EA8FF48006906E3 /* GoogleService-Info.plist */; };
+		84F626761EA929B5006906E3 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F626751EA929B5006906E3 /* FeedVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		84F6266D1EA8F7A1006906E3 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		84F626721EA8FF48006906E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84F626741EA90093006906E3 /* devslopes social.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "devslopes social.entitlements"; sourceTree = "<group>"; };
+		84F626751EA929B5006906E3 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		A6C7881A3A822786CC12AC8F /* Pods_devslopes_social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_devslopes_social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				8436FDF01E98B04B005F3058 /* SignInVC.swift */,
+				84F626751EA929B5006906E3 /* FeedVC.swift */,
 			);
 			name = Controller;
 			path = ..;
@@ -279,7 +282,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -293,6 +296,7 @@
 				84DF22CA1E991F690027571A /* RoundBtn.swift in Sources */,
 				8436FDF11E98B04B005F3058 /* SignInVC.swift in Sources */,
 				84DF22CC1E9922130027571A /* FancyTextField.swift in Sources */,
+				84F626761EA929B5006906E3 /* FeedVC.swift in Sources */,
 				8436FDEF1E98B04B005F3058 /* AppDelegate.swift in Sources */,
 				84DF22CE1E9925CF0027571A /* fancyButton.swift in Sources */,
 				84DF22C71E991D770027571A /* Constants.swift in Sources */,

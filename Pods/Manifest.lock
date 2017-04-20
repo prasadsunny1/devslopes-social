@@ -41,6 +41,7 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
   - IQKeyboardManager (4.0.9)
+  - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
   - Firebase
@@ -48,6 +49,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - IQKeyboardManager
+  - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Firebase: 2b1cdfba1cda8589f32904a697cc753322bff9d8
@@ -60,7 +62,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   IQKeyboardManager: 322c7405df3eb5f7e50dede32ea937bf3d4364e0
+  SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: ad1b6ed21cdd6c991389ed9f4231c9b3d9531646
+PODFILE CHECKSUM: cc04f2dafff9b80f17686211ace948e62e267184
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

@@ -12,6 +12,7 @@ import FirebaseDatabase
 import FirebaseAuth
 import FBSDKCoreKit
 import FBSDKLoginKit
+import SwiftKeychainWrapper
 
 
 class SignInVC: UIViewController {
@@ -25,7 +26,6 @@ class SignInVC: UIViewController {
         super.viewDidLoad()
 
         
-        
 
 //        var a = Dictionary<String, Any>()
 //        a = ["name":"sunny","surname":"prasad"]
@@ -33,6 +33,16 @@ class SignInVC: UIViewController {
 //        ref.setValue(a)
 //        ref.child("name").setValue(a)
     
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+       
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID){
+            print("id found in keychain")
+            performSegue(withIdentifier: "home", sender: nil)
+      
+        }
+
     }
     override func viewWillAppear(_ animated: Bool) {
       handle = FIRAuth.auth()?.addStateDidChangeListener() { (auth, user) in
@@ -73,6 +83,9 @@ class SignInVC: UIViewController {
                 print("unable to authenticate with Firebase \(String(describing: err))")
             }else{
                 print("successfull authenticated with firebase")
+                if let user = user{
+                    self.completeSignIn(id: user.uid)
+                }
             }
         })
     }
@@ -82,14 +95,22 @@ class SignInVC: UIViewController {
                 
                 if err == nil{
                     print("success: \(email) and \(pwd) authenticate with firebase via email")
+                    if let user = user{
+                        self.completeSignIn(id: user.uid)
+
+                    }
                 }
                 else{
                     FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (usr, errr) in
                         if errr != nil{
-                            print("some error creating a user \(errr)" )
+                            print("some error creating a user \(String(describing: errr))" )
                         }else{
                             print("user created successfully")
-                            print("user \(usr)")
+                            print("user \(String(describing: usr))")
+                            if let usr = usr {
+                                self.completeSignIn(id: usr.uid)
+
+                            }
                         }
                     })
                 }
@@ -100,5 +121,11 @@ class SignInVC: UIViewController {
         
     }
 
+    func completeSignIn(id : String ){
+       let keyChainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("data saved to key chain : \(keyChainResult)")
+        performSegue(withIdentifier: "home", sender: nil)
+
+    }
 }
 

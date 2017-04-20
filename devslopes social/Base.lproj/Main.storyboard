@@ -94,14 +94,17 @@
                                         <rect key="frame" x="0.0" y="39" width="283" height="19"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWt-ib-lfg" customClass="fancyButton" customModule="devslopes_social" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="78" width="283" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.23921568627450979" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" title="Sign in">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="EmailLoginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JaJ-6H-UPO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -134,6 +137,10 @@
                             <constraint firstItem="8fF-sI-ljZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xhP-of-L0z"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailAddress" destination="PzT-I8-c8t" id="uTI-mj-TPm"/>
+                        <outlet property="password" destination="5DQ-G1-pcC" id="q6h-2j-PRQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

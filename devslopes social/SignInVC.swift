@@ -16,8 +16,16 @@ import FBSDKLoginKit
 
 class SignInVC: UIViewController {
     var handle:FIRAuthStateDidChangeListenerHandle!
+    
+    @IBOutlet weak var emailAddress: FancyTextField!
+    
+    @IBOutlet weak var password: FancyTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+        
 
 //        var a = Dictionary<String, Any>()
 //        a = ["name":"sunny","surname":"prasad"]
@@ -67,6 +75,29 @@ class SignInVC: UIViewController {
                 print("successfull authenticated with firebase")
             }
         })
+    }
+    @IBAction func EmailLoginTapped(_ sender: fancyButton) {
+        if let email = emailAddress.text,let pwd = password.text{
+            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, err) in
+                
+                if err == nil{
+                    print("success: \(email) and \(pwd) authenticate with firebase via email")
+                }
+                else{
+                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (usr, errr) in
+                        if errr != nil{
+                            print("some error creating a user \(errr)" )
+                        }else{
+                            print("user created successfully")
+                            print("user \(usr)")
+                        }
+                    })
+                }
+                
+            })
+        }
+        
+        
     }
 
 }

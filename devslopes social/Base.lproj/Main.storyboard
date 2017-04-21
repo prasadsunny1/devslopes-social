@@ -171,12 +171,16 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-out" translatesAutoresizingMaskIntoConstraints="NO" id="AWZ-zi-nkV">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-out" translatesAutoresizingMaskIntoConstraints="NO" id="AWZ-zi-nkV">
                                         <rect key="frame" x="16" y="15" width="42" height="42"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="42" id="SKq-xY-HAk"/>
                                             <constraint firstAttribute="height" constant="42" id="iEj-Fg-ytM"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="59O-gF-k0M" appends="YES" id="2oU-b3-grj"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0044601382687687874" green="0.78044289350509644" blue="0.86341100931167603" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -214,7 +218,7 @@
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-post" translatesAutoresizingMaskIntoConstraints="NO" id="X5V-wb-IJj">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-post" translatesAutoresizingMaskIntoConstraints="NO" id="X5V-wb-IJj" customClass="CircleView" customModule="devslopes_social" customModuleProvider="target">
                                                 <rect key="frame" x="278" y="0.0" width="49" height="49"/>
                                                 <color key="backgroundColor" red="0.99875575304031372" green="0.24002915620803833" blue="0.00088441907428205013" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -236,11 +240,11 @@
                                     <constraint firstAttribute="height" constant="65" id="zgX-4Y-Pz5"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="284" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-3f-EJR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="284" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-3f-EJR">
                                 <rect key="frame" x="0.0" y="162" width="375" height="505"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="284" id="jYU-Vz-k1f">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postcell" rowHeight="284" id="jYU-Vz-k1f" customClass="PostCell" customModule="devslopes_social" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="284"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jYU-Vz-k1f" id="jZQ-aO-7ab">
@@ -285,11 +289,14 @@
                                                             <rect key="frame" x="8" y="68" width="327" height="191"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="LMs-GE-n7R">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="327" height="135"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="327" height="156"/>
                                                                 </imageView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit la" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZlK-h7-CQ8">
-                                                                    <rect key="frame" x="0.0" y="140" width="327" height="51"/>
+                                                                    <rect key="frame" x="0.0" y="161" width="327" height="30"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="yIy-er-RRV"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
@@ -319,8 +326,19 @@
                                                 <constraint firstItem="5iK-RH-5cd" firstAttribute="leading" secondItem="jZQ-aO-7ab" secondAttribute="leading" constant="16" id="dJF-qX-9AC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="caption" destination="ZlK-h7-CQ8" id="J4y-XW-eU2"/>
+                                            <outlet property="likesLbl" destination="BKB-ch-zeA" id="T2A-pa-W2S"/>
+                                            <outlet property="postImg" destination="LMs-GE-n7R" id="Wn6-4C-S1p"/>
+                                            <outlet property="profileImg" destination="5uS-OJ-lIx" id="nx7-qz-iVr"/>
+                                            <outlet property="usernameLbl" destination="Bk9-5X-3V3" id="pT6-fE-Q90"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3gQ-Pr-wN0" id="KRM-oX-Bdx"/>
+                                    <outlet property="delegate" destination="3gQ-Pr-wN0" id="QVt-wW-WJf"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -340,8 +358,17 @@
                             <constraint firstItem="IJM-3f-EJR" firstAttribute="top" secondItem="mM7-uq-aZH" secondAttribute="bottom" constant="16" id="z8C-nN-WLL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="IJM-3f-EJR" id="iNS-5c-Na0"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="q7k-Nb-l6N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUF-lP-M7z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="59O-gF-k0M">
+                    <connections>
+                        <action selector="signOUt:" destination="3gQ-Pr-wN0" id="8JJ-qE-90r"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="500" y="116.49175412293854"/>
         </scene>

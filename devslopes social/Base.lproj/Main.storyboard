@@ -341,7 +341,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xsn-EZ-MUe" firstAttribute="leading" secondItem="edh-VY-GVr" secondAttribute="leading" id="7cQ-jI-A1Z"/>
                             <constraint firstItem="mM7-uq-aZH" firstAttribute="leading" secondItem="edh-VY-GVr" secondAttribute="leading" constant="16" id="Dpi-DS-GEm"/>

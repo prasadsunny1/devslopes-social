@@ -240,19 +240,19 @@
                                     <constraint firstAttribute="height" constant="65" id="zgX-4Y-Pz5"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="284" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-3f-EJR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="284" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-3f-EJR">
                                 <rect key="frame" x="0.0" y="162" width="375" height="505"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postcell" rowHeight="284" id="jYU-Vz-k1f" customClass="PostCell" customModule="devslopes_social" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="284" id="jYU-Vz-k1f" customClass="PostCell" customModule="devslopes_social" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="284"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jYU-Vz-k1f" id="jZQ-aO-7ab">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="284"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5iK-RH-5cd">
-                                                    <rect key="frame" x="16" y="8" width="343" height="267"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5iK-RH-5cd" customClass="fancyView" customModule="devslopes_social" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="8" width="343" height="268"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MC6-y7-fff">
                                                             <rect key="frame" x="8" y="8" width="327" height="52"/>
@@ -286,13 +286,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ia9-tH-Hhc">
-                                                            <rect key="frame" x="8" y="68" width="327" height="191"/>
+                                                            <rect key="frame" x="8" y="68" width="327" height="192"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="LMs-GE-n7R">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="327" height="156"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="327" height="157"/>
                                                                 </imageView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit la" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZlK-h7-CQ8">
-                                                                    <rect key="frame" x="0.0" y="161" width="327" height="30"/>
+                                                                    <rect key="frame" x="0.0" y="162" width="327" height="30"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="yIy-er-RRV"/>
@@ -319,6 +319,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="5iK-RH-5cd" firstAttribute="top" secondItem="jZQ-aO-7ab" secondAttribute="top" constant="8" id="Fe2-I0-d3k"/>
                                                 <constraint firstAttribute="bottom" secondItem="5iK-RH-5cd" secondAttribute="bottom" constant="8" id="HcE-Az-cZj"/>

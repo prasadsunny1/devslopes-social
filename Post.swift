@@ -42,7 +42,7 @@ class Post{
             self._caption = caption
         }
         
-        if let imageUrl = postData["imgURL"] as? String{
+        if let imageUrl = postData["imageUrl"] as? String{
             self._imgURL = imageUrl
         }
         

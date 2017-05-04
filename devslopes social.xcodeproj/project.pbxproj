@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		68B100F7D7AC6E69662673BC /* Pods_devslopes_social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C7881A3A822786CC12AC8F /* Pods_devslopes_social.framework */; };
+		8408DB891EBB712C00E98764 /* Unknown.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8408DB881EBB712C00E98764 /* Unknown.gif */; };
 		843677901EAA255500FC306B /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436778F1EAA255500FC306B /* CircleImage.swift */; };
 		843677921EAA29B600FC306B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843677911EAA29B600FC306B /* PostCell.swift */; };
 		843677951EAA6A0A00FC306B /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843677941EAA6A0A00FC306B /* DataService.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		57276DF8BD6FC933F607518F /* Pods-devslopes social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devslopes social.release.xcconfig"; path = "Pods/Target Support Files/Pods-devslopes social/Pods-devslopes social.release.xcconfig"; sourceTree = "<group>"; };
 		76640760EC4CB4C0A68C0D19 /* Pods-devslopes social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devslopes social.debug.xcconfig"; path = "Pods/Target Support Files/Pods-devslopes social/Pods-devslopes social.debug.xcconfig"; sourceTree = "<group>"; };
+		8408DB881EBB712C00E98764 /* Unknown.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Unknown.gif; sourceTree = "<group>"; };
 		8436778F1EAA255500FC306B /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		843677911EAA29B600FC306B /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		843677941EAA6A0A00FC306B /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				84721D491E98B61A0075BC5C /* Model */,
 				8436FDEE1E98B04B005F3058 /* AppDelegate.swift */,
 				8436FDF21E98B04B005F3058 /* Main.storyboard */,
+				8408DB881EBB712C00E98764 /* Unknown.gif */,
 				8436FDF51E98B04B005F3058 /* Assets.xcassets */,
 				8436FDF71E98B04B005F3058 /* LaunchScreen.storyboard */,
 				8436FDFA1E98B04B005F3058 /* Info.plist */,
@@ -253,6 +256,7 @@
 				8436FDF91E98B04B005F3058 /* LaunchScreen.storyboard in Resources */,
 				84F626731EA8FF48006906E3 /* GoogleService-Info.plist in Resources */,
 				8436FDF61E98B04B005F3058 /* Assets.xcassets in Resources */,
+				8408DB891EBB712C00E98764 /* Unknown.gif in Resources */,
 				8436FDF41E98B04B005F3058 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,12 +16,13 @@ class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIImage
     
     @IBOutlet weak var tableView:UITableView!
     @IBOutlet weak var addImage: UIImageView!
-  
+    @IBOutlet weak var captionField: FancyTextField!
 
     var posts = [Post]()
     var imagePicker:UIImagePickerController!
     
     static var imageCache:NSCache<NSString,UIImage> = NSCache()
+    var imageSelected = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +37,13 @@ class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIImage
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
                 print(snapshot.value ?? "default Value Hit")
             if let snap = snapshot.children.allObjects as? [FIRDataSnapshot]{
+                self.posts.removeAll()
                 for snap in snap{
                     print("snap\(snap)")
                     if let postDict = snap.value as? Dictionary<String,AnyObject>{
                         let key = snap.key
                         let post = Post(postKey: key, postData: postDict)
+                        print("received a post \(post)")
                         self.posts.append(post)
                     }
                 }
@@ -56,6 +59,7 @@ class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIImage
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage{
             addImage.image = image
+            imageSelected = true
         }else{
             print("invalid, image was selected")
         }
@@ -95,13 +99,70 @@ class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIImage
     
     
     @IBAction func addImageTapped(_ sender: Any) {
+        
         present(imagePicker, animated: true, completion: nil)
     }
+    
     @IBAction func signOUt(_ sender: Any) {
+       
         KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         try! FIRAuth.auth()?.signOut()
         print("signedOut")
         performSegue(withIdentifier: "goToSignIn", sender: nil)
     }
 
+    @IBAction func postBtnClicked(_ sender: Any) {
+        
+        guard let caption = captionField.text , caption != "" else {
+            print("caption must be entered")
+            return
+        }
+        guard let img = addImage.image ,  imageSelected == true else {
+            print("image must be selected")
+            return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(img, 0.2){
+            
+            let imageUid = NSUUID().uuidString
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            DataService.ds.REF_POST_IMAGES.child(imageUid).put(imgData, metadata: metadata, completion: { (metadata, err) in
+                if err != nil{
+                    print("unable to upload image to firebase storage")
+                }else{
+                    print("successfully uploaded to firebase storage")
+                    let downloadUrl = metadata?.downloadURL()?.absoluteString
+                    print("got the download url for uploaded image" + downloadUrl!)
+                    if let url = downloadUrl{
+                        self.postToFirebase(imgUrl: url)
+
+                    }
+                }
+            })
+        }
+        
+        
+
+        
+    }
+    
+    
+    
+    func postToFirebase(imgUrl:String ){
+        let post:Dictionary<String ,AnyObject> = [
+            "caption" : captionField.text! as AnyObject,
+            "imageUrl" : imgUrl as AnyObject,
+            "likes" : 0 as AnyObject
+            
+        ]
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        captionField.text = ""
+        imageSelected = false
+        addImage.image = UIImage(named: "add-image")
+        
+        tableView.reloadData()
+    }
 }

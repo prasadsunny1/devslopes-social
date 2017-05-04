@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -222,13 +222,17 @@
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-post" translatesAutoresizingMaskIntoConstraints="NO" id="X5V-wb-IJj" customClass="CircleImage" customModule="devslopes_social" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2t-mc-vQp" customClass="RoundBtn" customModule="devslopes_social" customModuleProvider="target">
                                                 <rect key="frame" x="223" y="0.0" width="49" height="49"/>
-                                                <color key="backgroundColor" red="0.99875575304031372" green="0.24002915620803833" blue="0.00088441907428205013" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.23921568630000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="49" id="ywu-79-lfH"/>
+                                                    <constraint firstAttribute="width" constant="49" id="2jv-ba-g3q"/>
                                                 </constraints>
-                                            </imageView>
+                                                <state key="normal" backgroundImage="add-post"/>
+                                                <connections>
+                                                    <action selector="postBtnClicked:" destination="3gQ-Pr-wN0" eventType="touchUpInside" id="hcx-B2-uZo"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="6kd-gX-KRX" firstAttribute="height" secondItem="lZL-6a-088" secondAttribute="height" id="SQb-Y1-qHG"/>
@@ -261,7 +265,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MC6-y7-fff">
                                                             <rect key="frame" x="8" y="8" width="272" height="52"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="5uS-OJ-lIx" customClass="CircleView" customModule="devslopes_social" customModuleProvider="target">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="5uS-OJ-lIx" customClass="CircleImage" customModule="devslopes_social" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="52" id="VIm-WG-zAR"/>
@@ -292,7 +296,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ia9-tH-Hhc">
                                                             <rect key="frame" x="8" y="68" width="272" height="192"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="LMs-GE-n7R">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unknown.gif" translatesAutoresizingMaskIntoConstraints="NO" id="LMs-GE-n7R">
                                                                     <rect key="frame" x="0.0" y="0.0" width="272" height="157"/>
                                                                 </imageView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit la" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZlK-h7-CQ8">
@@ -365,6 +369,7 @@
                     </view>
                     <connections>
                         <outlet property="addImage" destination="lZL-6a-088" id="WtQ-nx-D0G"/>
+                        <outlet property="captionField" destination="6kd-gX-KRX" id="Kcn-dC-Cr3"/>
                         <outlet property="tableView" destination="IJM-3f-EJR" id="iNS-5c-Na0"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="q7k-Nb-l6N"/>
                     </connections>
@@ -385,11 +390,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Unknown.gif" width="64" height="64"/>
         <image name="add-image" width="88" height="88"/>
         <image name="add-post" width="88" height="88"/>
         <image name="devslopes-logo" width="150" height="94"/>
         <image name="empty-heart" width="70" height="70"/>
-        <image name="placeholder" width="567" height="312"/>
         <image name="profile" width="113" height="155"/>
         <image name="sign-out" width="92" height="65"/>
     </resources>
